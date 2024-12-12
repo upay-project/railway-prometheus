@@ -8,7 +8,9 @@ mkdir -p /etc/prometheus
 
 # Inject config from environment variables
 if [ -n "$PROMETHEUS_CONFIG" ]; then
+  rm -f /etc/prometheus/prometheus.yml
   echo "$PROMETHEUS_CONFIG" > /etc/prometheus/prometheus.yml
+  chmod 777 /etc/prometheus/prometheus.yml
 fi
 
 # Set default port
