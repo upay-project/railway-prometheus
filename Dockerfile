@@ -1,5 +1,4 @@
-ARG VERSION="latest"
-FROM prom/prometheus:${VERSION}
+FROM prom/prometheus
 
 # copy the default Prometheus configuration file
 COPY prometheus.yml /etc/prometheus/prometheus.yml
