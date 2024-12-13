@@ -8,7 +8,7 @@ EXPOSE 9090
 
 # set the entrypoint command
 COPY run.sh /run.sh
+RUN chmod +x /run.sh
 
 # run the Prometheus server
-USER root
-ENTRYPOINT [ "/run.sh" ]
+ENTRYPOINT [ "sh", "/run.sh" ]

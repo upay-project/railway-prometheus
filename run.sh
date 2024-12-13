@@ -14,8 +14,8 @@ if [ -n "$PROMETHEUS_CONFIG" ]; then
 fi
 
 # Set default port
-if [ -z "$PROMETHEUS_PORT" ]; then
-  PROMETHEUS_PORT=9090
+if [ -z "$PORT" ]; then
+  PORT=9090
 fi
 
 if [ -z "$PROMETHEUS_ARGS" ]; then
@@ -23,7 +23,7 @@ if [ -z "$PROMETHEUS_ARGS" ]; then
     --storage.tsdb.path=/prometheus \
     --web.console.libraries=/usr/share/prometheus/console_libraries \
     --web.console.templates=/usr/share/prometheus/consoles \
-    --web.external-url=http://localhost:$PROMETHEUS_PORT/ \
+    --web.external-url=http://localhost:$PORT/ \
     --log.level=info"
 fi
 
