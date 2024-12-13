@@ -7,8 +7,10 @@ COPY prometheus.yml /etc/prometheus/prometheus.yml
 EXPOSE 9090
 
 # set the entrypoint command
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
+COPY run.sh /app/run.sh
+
+USER root
+RUN chmod +x /app/run.sh
 
 # run the Prometheus server
-ENTRYPOINT [ "sh", "/run.sh" ]
+ENTRYPOINT [ "sh", "/app/run.sh" ]
