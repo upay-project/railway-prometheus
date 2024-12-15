@@ -21,6 +21,7 @@ fi
 if [ -z "$PROMETHEUS_ARGS" ]; then
   PROMETHEUS_ARGS="--config.file=/etc/prometheus/prometheus.yml \
     --storage.tsdb.path=/prometheus \
+    --web.enable-remote-write-receiver \
     --web.console.libraries=/usr/share/prometheus/console_libraries \
     --web.console.templates=/usr/share/prometheus/consoles \
     --web.external-url=http://localhost:$PORT/ \
