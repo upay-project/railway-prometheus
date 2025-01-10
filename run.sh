@@ -25,7 +25,8 @@ if [ -z "$PROMETHEUS_ARGS" ]; then
     --web.console.libraries=/usr/share/prometheus/console_libraries \
     --web.console.templates=/usr/share/prometheus/consoles \
     --web.external-url=http://localhost:$PORT/ \
-    --log.level=info"
+    --log.level=info \
+    --log.format=json"
 fi
 
 # Start Prometheus
